@@ -1,0 +1,30 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "tutor",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "student",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "time",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "price",
+                "type": "uint256"
+            }
+        ],
+        "name": "bookSession",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

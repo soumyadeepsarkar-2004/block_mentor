@@ -13,12 +13,21 @@ contract Tutoring {
     mapping(uint256 => Session) public sessions;
     uint256 public sessionCount;
 
-    function bookSession(string memory tutor, string memory student, uint256 time, uint256 price) public {
+    function bookSession(
+        string memory tutor, 
+        string memory student, 
+        uint256 time, 
+        uint256 price
+    ) public {
         sessions[sessionCount] = Session(tutor, student, time, price, false);
         sessionCount++;
     }
 
     function completeSession(uint256 sessionId) public {
         sessions[sessionId].completed = true;
+    }
+
+    function getSessionPrice(uint256 sessionId) public view returns (uint256, uint256) {
+        return (sessions[sessionId].price / 100, sessions[sessionId].price % 100);
     }
 }

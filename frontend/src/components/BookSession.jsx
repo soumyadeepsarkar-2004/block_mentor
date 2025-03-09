@@ -26,7 +26,10 @@ const BookSession = () => {
                 return;
             }
 
-            const tx = await contract.bookSession(tutor, student, time, price);
+            const parsedTime = Math.round(parseFloat(time) * 100);
+            const parsedPrice = Math.round(parseFloat(price) * 100);
+
+            const tx = await contract.bookSession(tutor, student, parsedTime, parsedPrice);
             await tx.wait();
 
             alert("Session booked successfully!");
@@ -41,8 +44,8 @@ const BookSession = () => {
             <h2>Book a Session</h2>
             <input placeholder="Tutor Name" onChange={(e) => setTutor(e.target.value)} />
             <input placeholder="Student Name" onChange={(e) => setStudent(e.target.value)} />
-            <input placeholder="Time" type="number" onChange={(e) => setTime(e.target.value)} />
-            <input placeholder="Price" type="number" onChange={(e) => setPrice(e.target.value)} />
+            <input placeholder="Time (hours or minutes)" type="number" step="0.01" onChange={(e) => setTime(e.target.value)} />
+            <input placeholder="Price (EDU)" type="number" step="0.01" onChange={(e) => setPrice(e.target.value)} />
             <button onClick={bookSession}>Book</button>
         </div>
     );

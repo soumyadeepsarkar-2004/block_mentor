@@ -1,3 +1,5 @@
+import { JSX } from "react";
+import { Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,43 +26,60 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
 import SmartContractLicense from "./pages/SmartContractLicense";
 import { BlockchainProvider } from "./context/BlockchainContext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import "@/App.css";
 
 const queryClient = new QueryClient();
 
+const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+    const { user } = useAuth();
+
+    if (user === undefined) {
+        return (
+            <div className="h-screen w-screen flex items-center justify-center">
+                Loading...
+            </div>
+        );
+    }
+
+    return user ? children : <Navigate to="/login" replace />;
+};
+
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BlockchainProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/courses/:id" element={<CourseDetail />} />
-            <Route path="/tutors" element={<Tutors />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/become-tutor" element={<BecomeTutor />} />
-            <Route path="/blockchain-integration" element={<BlockchainIntegration />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Career />} />
-            <Route path="/press" element={<Press />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/smart-contract-license" element={<SmartContractLicense />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </BlockchainProvider>
-  </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+        <BlockchainProvider>
+            <AuthProvider>
+                <TooltipProvider>
+                    <Toaster />
+                    <Sonner />
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/" element={<Index />} />
+                            <Route path="/courses" element={<Courses />} />
+                            <Route path="/courses/:id" element={<CourseDetail />} />
+                            <Route path="/tutors" element={<Tutors />} />
+                            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/forgot-password" element={<ForgotPassword />} />
+                            <Route path="/register" element={<Register />} />
+                            <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+                            <Route path="/become-tutor" element={<ProtectedRoute><BecomeTutor /></ProtectedRoute>} />
+                            <Route path="/blockchain-integration" element={<BlockchainIntegration />} />
+                            <Route path="/about-us" element={<AboutUs />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/careers" element={<Career />} />
+                            <Route path="/press" element={<Press />} />
+                            <Route path="/terms-of-service" element={<TermsOfService />} />
+                            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                            <Route path="/cookie-policy" element={<CookiePolicy />} />
+                            <Route path="/smart-contract-license" element={<SmartContractLicense />} />
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                    </BrowserRouter>
+                </TooltipProvider>
+            </AuthProvider>
+        </BlockchainProvider>
+    </QueryClientProvider>
 );
 
 export default App;

@@ -7,10 +7,10 @@ import { dirname, resolve } from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [tailwindcss(), react()],
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "src"),
+    plugins: [tailwindcss(), react()],
+    resolve: {
+        alias: {
+            "@": resolve(__dirname, "src"),
+        },
     },
-  },
 });

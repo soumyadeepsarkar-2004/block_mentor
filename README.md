@@ -86,12 +86,14 @@ npm run dev
 Visit the app at http://localhost:5173
 
 ### 🧪 Testing
-⚠️ Testing setup coming soon (Jest or Vitest will be integrated in future updates).
+
+### ⚠️ Testing setup coming soon (Jest or Vitest will be integrated in future updates).
 
 Run available tests (if configured):
 ```bash
 npm test
 ```
+
 ### 📄 License
 This project is licensed under the MIT License.
 

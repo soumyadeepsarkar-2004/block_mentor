@@ -1,5 +1,3 @@
-<a name="top"></a>
-
 <div align="center">
 
 # 🚀 BLOCK_MENTOR  

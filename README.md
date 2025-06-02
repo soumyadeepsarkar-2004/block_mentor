@@ -28,8 +28,8 @@
 - [Overview](#-overview)
 - [Features](#-features)
 - [Getting Started](#-getting-started)
-  - [Prerequisites](#-prerequisites)
-  - [Installation](#-installation)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
 - [Usage](#-usage)
 - [Testing](#-testing)
 - [License](#-license)
@@ -95,8 +95,8 @@ npm test
 This project is licensed under the MIT License.
 
 <div align="center">
-``` Made with 💙 by Soumyadeep Sarkar
+Made with 💙 by Soumyadeep Sarkar
 
 🔼 Back to Top 
 
-</div> ```
+</div> 

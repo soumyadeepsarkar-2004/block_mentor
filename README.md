@@ -22,6 +22,7 @@
 ![npm](https://img.shields.io/badge/-npm-CB3837?logo=npm&style=flat-square)
 
 ---
+</div>
 
 ### 📑 Table of Contents
 
@@ -34,7 +35,7 @@
 - [Testing](#-testing)
 - [License](#-license)
 
-</div>
+
 
 ---
 

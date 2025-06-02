@@ -98,7 +98,7 @@ npm test
 ---
 
 ## 📄 License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](#MIT-License).
 
 <details> <summary>View License Details</summary>
 MIT License
@@ -131,4 +131,4 @@ SOFTWARE.
 *Made with 💙 by Soumyadeep Sarkar!*
 </div>
 
-[🔼 Back to Top](https://github.com/soumyadeepsarkar-2004/block_mentor#top)
+[🔼 Return](https://github.com/soumyadeepsarkar-2004/block_mentor#top)

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 BLOCK_MENTOR  
+# BLOC MENTOR  
 *Empower Your Learning Journey with Blockchain Innovation*
 
 ![Last Commit](https://img.shields.io/github/last-commit/soumyadeepsarkar-2004/block_mentor?style=flat-square)  
@@ -87,9 +87,9 @@ npm run dev
 
 ---
 
-## 🧪 Testing
+## � Testing
 
-### ⚠️ Testing setup coming soon (Jest or Vitest will be integrated in future updates).
+#### ⚠️ Testing setup coming soon (Jest or Vitest will be integrated in future updates).
 
 Run available tests (if configured):
 ```bash

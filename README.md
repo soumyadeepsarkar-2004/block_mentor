@@ -128,7 +128,7 @@ SOFTWARE.
 
 <div align="center">
   
-*Made with 💙 by Soumyadeep Sarkar!*
+*Made with 💙 by TeamX!*
 </div>
 
 [🔼 Return](https://github.com/soumyadeepsarkar-2004/block_mentor#top)
